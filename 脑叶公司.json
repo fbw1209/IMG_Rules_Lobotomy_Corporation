@@ -53,6 +53,12 @@
 			"attack": 1,
 			"health": 1,
 			"pixport_url": "https://gh-proxy.org/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%B0%8F%E5%96%99.png"
+		},
+		{
+			"name": "长臂",
+			"attack": 1,
+			"health": 1,
+			"pixport_url": "https://gh-proxy.org/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%95%BF%E8%87%82.png"
 		}
 	],
 	"sigils": {
