@@ -82,6 +82,15 @@
 			"attack": 0,
 			"health": 1,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%80%86%E4%BD%8D%E8%84%91%E5%95%A1%E8%82%BD.png"
+		},
+		{
+			"name":"数据删除",
+			"sigils": ["CENSORED"],
+			"energy_cost":6,
+			"blood_cost":4,
+			"attack":6,
+			"health":3,
+			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4.png"
 		}
 	],
 	"sigils": {
@@ -164,7 +173,8 @@
 		"Unkillable (Eternal)": "When a card bearing this sigil perishes, a copy of it is created in your hand without this sigil.",
 		"Vessel Printer": "Once a card bearing this sigil is struck, draw a card from your side deck.",
 		"Waterborne": "A card bearing this sigil submerges itself during its opponent's turn. while submerged, opposing creatures attack its owner directly.",
-		"Worthy Sacrifice": "A card bearing this sigil is counted as 3 blood rather than 1 blood when sacrificed."
+		"Worthy Sacrifice": "A card bearing this sigil is counted as 3 blood rather than 1 blood when sacrificed.",
+		"CENSORED": "本单位消灭单位后将被消灭单位的复制加入手中  使其费用为零属性1/1"
 	},
 	"working_sigils": [
 		"Airborne",
@@ -245,7 +255,8 @@
 		"Bomb Spewer (Eternal)",
 		"Corpse Eater",
 		"Gem Guardian",
-		"Gem Detonator (5)"
+		"Gem Detonator (5)",
+		"CENSORED"
 	],
 	"side_decks":{
         "脑啡肽*10": {
@@ -266,5 +277,13 @@
 			],
 			"count": 10
 		}
+	},
+	"custom_sigils":{
+		    "CENSORED": {
+            "description": "本单位消灭单位后将被消灭单位的复制加入手中  使其费用为零属性1/1",
+            "author": "Valentina&fbw1209",
+            "url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4.gd",
+            "icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/CENSORED.png"
+        }
 	}
 }
