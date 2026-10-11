@@ -1,15 +1,17 @@
 extends SigilEffect
-# 印记名：战利品
+# 印记名：数据删除
 # 效果：本单位消灭一个敌方单位后，把该单位的复制加入自己手中；
-#       复制品的费用变为 0，攻击/生命变为 1/1。
+#       复制品费用为 0、属性 1/1，卡图替换为 "复制" 这张卡的图片。
 #
 # 部署方式（二选一）：
-#   1) 自定义印记：复制到 user://scripts/ ，重命名为 <你的规则集名>_战利品.gd
-#      并在规则集 custom_sigils 里声明 "战利品"。
-#   2) 当内置印记：直接放进 res://scripts/classes/sigils/ ，任何规则集直接写名字即可。
+#   1) 自定义印记：复制到 user://scripts/ ，重命名为 <你的规则集名>_数据删除.gd
+#   2) 当内置印记：直接放进 res://scripts/classes/sigils/
 #
 # 联机：只有"拥有者"这边执行（isFriendly），并调用会自动广播的 draw_card；
 #       对手端通过回放 _opponent_drew_card 获得手牌数变化，不会 desync。
+
+# 用来当卡图的卡名（你自定义规则集里那张叫 "复制" 的卡）
+const COPY_CARD_NAME = "复制"
 
 func _side_of(c: Node) -> String:
 	# 卡 -> 格子 -> PlayerSlots / EnemySlots（含后排）
@@ -56,4 +58,39 @@ func _add_copy_to_hand(src: Dictionary) -> void:
 	copy["health"] = 1
 	copy.erase("atkspecial")
 
-	fightManager.draw_card(copy)
+	# 抽到手牌（返回创建出来的那张卡）
+	var new_card = fightManager.draw_card(copy)
+
+	# 把手牌里这张卡的卡图替换成 "复制" 的图片
+	if is_instance_valid(new_card):
+		var tex = _load_card_texture(COPY_CARD_NAME)
+		if tex:
+			new_card.get_node("CardBody/CardPort").texture = tex
+
+# 按卡名找图，查找顺序和引擎一致：本地覆盖 -> 规则集下载 -> 游戏自带
+func _load_card_texture(card_name: String):
+	var d = Directory.new()
+
+	var override_path = CardInfo.portrait_override_path + card_name + ".png"
+	if d.file_exists(override_path):
+		return _load_img(override_path)
+
+	var custom_path = CardInfo.custom_portrait_path + CardInfo.ruleset + "_" + card_name + ".png"
+	if d.file_exists(custom_path):
+		return _load_img(custom_path)
+
+	var builtin_path = "res://gfx/pixport/" + card_name + ".png"
+	if ResourceLoader.exists(builtin_path):
+		return load(builtin_path)
+
+	print("数据删除：找不到卡图 '", card_name, "'")
+	return null
+
+func _load_img(path: String):
+	var img = Image.new()
+	if img.load(path) != OK:
+		return null
+	var tex = ImageTexture.new()
+	tex.create_from_image(img)
+	tex.flags -= tex.FLAG_FILTER
+	return tex
