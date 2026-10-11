@@ -93,10 +93,12 @@
 			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4.png"
 		},
 		{
-			"name":"复制",
+			"name":"CENSORED-1",
+			"sigils": ["CENSORED"],
 			"banned":true,
+			"energy_cost":1,
 			"attack":1,
-			"health":1,
+			"health":2,
 			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%A4%8D%E5%88%B6.png"
 		}
 	],
@@ -181,7 +183,7 @@
 		"Vessel Printer": "Once a card bearing this sigil is struck, draw a card from your side deck.",
 		"Waterborne": "A card bearing this sigil submerges itself during its opponent's turn. while submerged, opposing creatures attack its owner directly.",
 		"Worthy Sacrifice": "A card bearing this sigil is counted as 3 blood rather than 1 blood when sacrificed.",
-		"CENSORED": "本单位消灭单位后将被消灭单位的复制加入手中  使其费用为零属性1/1"
+		"CENSORED": "本单位击杀单位后将一张CENSORED-1加入手中"
 	},
 	"working_sigils": [
 		"Airborne",
@@ -287,7 +289,7 @@
 	},
 	"custom_sigils":{
 		    "CENSORED": {
-            "description": "本单位消灭单位后将被消灭单位的复制加入手中  使其费用为零属性1/1",
+            "description": "本单位击杀单位后将一张CENSORED-1加入手中",
             "author": "Valentina&fbw1209",
             "url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4.gd",
             "icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/CENSORED.png"
