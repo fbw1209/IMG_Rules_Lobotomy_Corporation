@@ -288,11 +288,17 @@
 		}
 	},
 	"custom_sigils":{
-		    "CENSORED": {
+		"CENSORED": {
             "description": "本单位击杀单位后将一张CENSORED-1加入手中",
             "author": "Valentina&fbw1209",
             "url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4.gd",
             "icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/CENSORED.png"
-        }
+        },
+		"大怪兽":{
+			"description":"这张卡被召唤时，消灭我方场上其他所有单位，然后在其余 3 个空格依次召唤 小喙 / 巨目 / 长臂",
+			"author": "Valentina&fbw1209",
+            "url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%A4%A7%E6%80%AA%E5%85%BD.gd",
+            "icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/%E5%8D%B0%E8%AE%B0/%E5%A4%A7%E6%80%AA%E5%85%BD.png"
+		}
 	}
 }
