@@ -127,18 +127,21 @@
 				"Fledgling"
 			],
 			"evolution":"微笑的尸山 - 两头",
-			"attack":1,
+			"rare":true,
+			"blood_cost":2,
+			"attack":2,
 			"health":1,
 			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1.png"
 		},
 		{
 			"name":"微笑的尸山 - 两头",
 			"sigils":[
-				"Fledgling"
+				"Frozen Away"
 			],
-			"evolution":"微笑的尸山 - 三头",
+			"evolution":"微笑的尸山",
 			"banned":true,
-			"attack":2,
+			"rare":true,
+			"attack":4,
 			"health":2,
 			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1%20-%20%E4%B8%A4%E5%A4%B4.png"
 		},
@@ -149,8 +152,9 @@
 			],
 			"evolution":"微笑的尸山 - 两头",
 			"banned":true,
-			"attack":3,
-			"health":3,
+			"rare":true,
+			"attack":6,
+			"health":4,
 			"pixport_url":"https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%BE%AE%E7%AC%91%E7%9A%84%E5%B0%B8%E5%B1%B1%20-%20%E4%B8%89%E5%A4%B4.png"
 		}
 	],
@@ -377,11 +381,6 @@
 			"author": "Valentina&fbw1209",
 			"url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%A4%A7%E6%80%AA%E5%85%BD.gd",
 			"icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/%E5%A4%A7%E6%80%AA%E5%85%BD.png"
-		},
-		"冰封禁锢":{
-			"description":"带有此印记的卡牌死亡时，其内部的生物被释放到该位置",
-			"author": "fbw1209",
-			"url": ""
 		}
 	}
 }
