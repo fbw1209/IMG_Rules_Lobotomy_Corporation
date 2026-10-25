@@ -1,12 +1,12 @@
 {
 	"ruleset": "脑叶公司",
 	"hammers_per_turn": -1,
-	"deck_size_min": 1,
-	"max_commons_main": 99,
-	"ant_limit": 1,
-	"max_commons_side": 99,
-	"num_candles": 2,
-	"variable_attack_nerf": true,
+	"deck_size_min": 20,
+	"max_commons_main": 10,
+	"ant_limit": 99,
+	"max_commons_side": 10,
+	"num_candles": 3,
+	"variable_attack_nerf": false,
 	"opt_actives": true,
 	"allow_snuffing_candles": true,
 	"enable_backrow": false,
@@ -15,11 +15,15 @@
 	"cards": [
 		{
 			"name": "终末鸟",
+			"rare": true,
 			"sigils": [
 				"大怪兽",
 				"Made of Stone",
 				"Omni Strike"
 			],
+			"blood_cost":4,
+			"energy_cost":6,
+			"bone_cost":15,
 			"attack": 2,
 			"health": 999,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E7%BB%88%E6%9C%AB%E9%B8%9F.png"
@@ -44,24 +48,38 @@
 		},
 		{
 			"name": "巨目",
+			"sigils": [
+				"巨目",
+				"Made of Stone",
+				"蛋"
+			],
 			"banned": true,
-			"attack": 1,
-			"health": 1,
+			"attack": 0,
+			"health": 25,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%B7%A8%E7%9B%AE.png"
 		},
 		{
 			"name": "小喙",
-			"sigils":["小喙"],
+			"sigils":[
+				"小喙",
+				"Made of Stone",
+				"蛋"
+			],
 			"banned": true,
 			"attack": 1,
-			"health": 1,
+			"health": 20,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E5%B0%8F%E5%96%99.png"
 		},
 		{
 			"name": "长臂",
+			"sigils":[
+				"Sniper",
+				"Touch of Death",
+				"蛋"
+			],
 			"banned": true,
-			"attack": 1,
-			"health": 1,
+			"attack": 3,
+			"health": 15,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%95%BF%E8%87%82.png"
 		},
 		{
@@ -86,6 +104,7 @@
 		},
 		{
 			"name":"数据删除",
+			"rare":true,
 			"sigils": ["CENSORED"],
 			"energy_cost":6,
 			"blood_cost":4,
@@ -187,7 +206,8 @@
 		"CENSORED": "本单位击杀单位后将一张CENSORED-1加入手中",
 		"大怪兽": "这张卡被召唤时，消灭我方场上其他所有单位，然后在其余 3 个空格依次召唤 小喙 / 巨目 / 长臂",
 		"蛋": "这张卡死亡时，对与自己同边的终末鸟造成 333 点伤害",
-		"小喙": "敌方单位被召唤到场上时，对其造成 1 点伤害；敌方单位攻击小喙同边单位时，对攻击者造成 1 点伤害"
+		"小喙": "敌方单位被召唤到场上时，对其造成 1 点伤害；敌方单位攻击小喙同边单位时，对攻击者造成 1 点伤害",
+		"巨目": "敌方单位被召唤到场上时，对其造成 1 点伤害；敌方单位攻击巨目同边单位时，对攻击者造成 1 点伤害"
 	},
 	"working_sigils": [
 		"Airborne",
@@ -272,7 +292,8 @@
 		"CENSORED",
 		"大怪兽",
 		"蛋",
-		"小喙"
+		"小喙",
+		"巨目"
 	],
 	"side_decks":{
         "脑啡肽*10": {
@@ -312,6 +333,12 @@
 			"author": "Valentina&fbw1209",
             "url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%B0%8F%E5%96%99.gd",
             "icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/%E5%B0%8F%E5%96%99.png"
+		},
+		"巨目":{
+			"description":"巨目的敌方单位攻击巨目同边单位后，削弱巨目的敌方最左侧、攻击力大于 0 的单位 1 点攻击力；若该单位攻击力为 0 则跳过，顺延到下一个",
+			"author": "Valentina&fbw1209",
+			"url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%B7%A8%E7%9B%AE.gd",
+			"icon_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%8D%B0%E8%AE%B0/%E5%9B%BE%E7%89%87/%E5%B7%A8%E7%9B%AE.png"
 		},
 		"大怪兽":{
 			"description":"这张卡被召唤时，消灭我方场上其他所有单位，然后在其余 3 个空格依次召唤 小喙 / 巨目 / 长臂",
