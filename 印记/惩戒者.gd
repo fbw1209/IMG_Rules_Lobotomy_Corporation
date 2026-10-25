@@ -21,7 +21,6 @@ func handle_event(event: String, params: Array):
 
 	_force_kill(killer)
 
-# 直接击杀（绕过 Warded / Highlight），且不会再次触发对方的"惩戒者"
 func _force_kill(unit) -> void:
 	if not is_instance_valid(unit) or not unit.is_alive():
 		return
@@ -30,9 +29,15 @@ func _force_kill(unit) -> void:
 	if unit.has_sigil("Made of Stone"):
 		return
 
+	# 立刻判定死亡（这样它不会继续攻击），但把播 Perish 延迟到本帧结束，
+	# 避免在它自己的攻击动画回调里同步切动画导致崩溃。
 	unit.health = 0
 	unit.draw_stats()
+	call_deferred("_play_perish", unit)
 
+func _play_perish(unit) -> void:
+	if not is_instance_valid(unit) or unit.is_queued_for_deletion():
+		return
 	var anim = unit.get_node("AnimationPlayer")
 	if not "Perish" in anim.current_animation:
 		anim.play("Perish")

@@ -40,6 +40,7 @@
 				"Mighty Leap",
 				"惩戒者"
 			],
+			"blood_cost":2,
 			"attack": 1,
 			"health": 2,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%99%86%E7%94%9F%E9%AE%9F%E9%B1%87.png"
@@ -143,7 +144,7 @@
 				"增生",
 				"Frozen Away"
 			],
-			"upgrade_into":"微笑的尸山",
+			"upgrade_into":"微笑的尸山 - 三头",
 			"banned":true,
 			"rare":true,
 			"attack":4,
