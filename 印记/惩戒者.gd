@@ -26,6 +26,10 @@ func _force_kill(unit) -> void:
 	if not is_instance_valid(unit) or not unit.is_alive():
 		return
 
+	# 磐石之身免疫，和死神之触一致
+	if unit.has_sigil("Made of Stone"):
+		return
+
 	unit.health = 0
 	unit.draw_stats()
 
