@@ -19,9 +19,20 @@ func handle_event(event: String, params: Array):
 	if not dying:
 		return
 
-	_force_kill(killer)
+	_kill_later(killer)
 
-func _force_kill(unit) -> void:
+func _kill_later(unit) -> void:
+	if not is_instance_valid(unit):
+		return
+
+	var anim = unit.get_node("AnimationPlayer")
+
+	# 如果它正在攻击，就等这次攻击动画播完再杀，避免打断战斗协程
+	if anim.current_animation in ["Attack", "AttackRemote"]:
+		yield(anim, "animation_finished")
+	else:
+		yield(fightManager.get_tree().create_timer(0.0), "timeout")
+
 	if not is_instance_valid(unit) or not unit.is_alive():
 		return
 
@@ -29,15 +40,9 @@ func _force_kill(unit) -> void:
 	if unit.has_sigil("Made of Stone"):
 		return
 
-	# 立刻判定死亡（这样它不会继续攻击），但把播 Perish 延迟到本帧结束，
-	# 避免在它自己的攻击动画回调里同步切动画导致崩溃。
 	unit.health = 0
 	unit.draw_stats()
-	call_deferred("_play_perish", unit)
 
-func _play_perish(unit) -> void:
-	if not is_instance_valid(unit) or unit.is_queued_for_deletion():
-		return
-	var anim = unit.get_node("AnimationPlayer")
-	if not "Perish" in anim.current_animation:
-		anim.play("Perish")
+	var a2 = unit.get_node("AnimationPlayer")
+	if not "Perish" in a2.current_animation:
+		a2.play("Perish")

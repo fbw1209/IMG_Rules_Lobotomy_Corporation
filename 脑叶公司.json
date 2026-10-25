@@ -8,7 +8,7 @@
 	"num_candles": 3,
 	"variable_attack_nerf": false,
 	"opt_actives": true,
-	"allow_snuffing_candles": true,
+	"allow_snuffing_candles": false,
 	"enable_backrow": false,
 	"portrait": "portraits/Grizzly",
 	"description": "测试规则",
@@ -342,12 +342,12 @@
 		"惩戒者"
 	],
 	"side_decks":{
-        "脑啡肽*10": {
+        "脑啡肽\n*10": {
             "type": "single",
             "card": "脑啡肽",
             "count": 10
         },
-		"逆位脑啡肽*10": {
+		"逆位脑啡\n肽*10": {
             "type": "single",
             "card": "逆位脑啡肽",
             "count": 10

@@ -22,11 +22,13 @@ func handle_event(event: String, params: Array):
 	if target == "" or target == card.card_data.get("name", ""):
 		return
 
-	# 延迟到本帧结束再变形：避免在 card_hit 信号回调里重建 sigils 引发重入崩溃
-	call_deferred("_upgrade", target)
+	# 下一帧再变形，避免在 card_hit 信号回调里重建 sigils 导致重入
+	_upgrade_later(target)
 
-func _upgrade(target: String) -> void:
-	# 如果这张卡在同一瞬间被别的效果（如惩戒者）打死，就不升级
+func _upgrade_later(target: String) -> void:
+	yield(fightManager.get_tree().create_timer(0.0), "timeout")
+
+	# 如果这张卡同一瞬间被「惩戒者」打死，就不升级
 	if not is_instance_valid(card) or not card.is_alive():
 		return
 	if card.card_data.get("name", "") == target:
