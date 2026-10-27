@@ -4,14 +4,14 @@
 	"deck_size_min": 20,
 	"max_commons_main": 10,
 	"ant_limit": 99,
-	"max_commons_side": 10,
+	"max_commons_side": 20,
 	"num_candles": 3,
 	"variable_attack_nerf": false,
 	"opt_actives": true,
 	"allow_snuffing_candles": false,
 	"enable_backrow": false,
 	"portrait": "portraits/Grizzly",
-	"description": "测试规则",
+	"description": "以脑叶公司里的异想体为\n卡牌进行对战的规则集\n收录了脑叶公司中所有异\n想体以及各部门部长",
 	"cards": [
 		{
 			"name": "终末鸟",
@@ -24,14 +24,30 @@
 			"blood_cost":4,
 			"energy_cost":6,
 			"bone_cost":15,
-			"attack": 2,
+			"attack": 1,
 			"health": 999,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E7%BB%88%E6%9C%AB%E9%B8%9F.png"
 		},
 		{
 			"name": "波迪",
+			"sigils":[
+				"Stinky",
+				"Fledgling"
+			],
+			"evolution":"肌肉波迪",
+			"bone_cost":4,
 			"attack": 1,
 			"health": 1,
+			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E6%B3%A2%E8%BF%AA.png"
+		},
+		{
+			"name": "肌肉波迪",
+			"sigils":[
+				"Stinky"
+			],
+			"banned": true,
+			"attack": 2,
+			"health": 3,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E6%B3%A2%E8%BF%AA.png"
 		},
 		{
@@ -47,8 +63,10 @@
 		},
 		{
 			"name": "面壁女",
-			"attack": 1,
-			"health": 1,
+			"bone_cost":4,
+			"sigils": ["惩戒者"],
+			"attack": 0,
+			"health": 2,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%9D%A2%E5%A3%81%E5%A5%B3.png"
 		},
 		{
@@ -92,19 +110,16 @@
 			"sigils": ["Boneless"],
 			"banned": true,
 			"attack": 0,
-			"health": 1,
+			"health": 2,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E8%84%91%E5%95%A1%E8%82%BD.png"
 		},
 		{
 			"name": "逆位脑啡肽",
 			"nosac": true,
-			"sigils": [
-				"Bone Digger",
-				"Bone Digger"
-			],
+			"sigils": ["Bone King"],
 			"banned": true,
 			"attack": 0,
-			"health": 1,
+			"health": 2,
 			"pixport_url": "https://githubproxy.cc/https://github.com/fbw1209/IMG_Rules_Lobotomy_Corporation/raw/refs/heads/main/%E5%9B%BE%E7%89%87/%E9%80%86%E4%BD%8D%E8%84%91%E5%95%A1%E8%82%BD.png"
 		},
 		{
@@ -145,6 +160,7 @@
 				"Frozen Away"
 			],
 			"upgrade_into":"微笑的尸山 - 三头",
+			"evolution":"微笑的尸山",
 			"banned":true,
 			"rare":true,
 			"attack":4,
@@ -342,15 +358,15 @@
 		"惩戒者"
 	],
 	"side_decks":{
-        "脑啡肽\n*10": {
+        "脑啡肽\n*20": {
             "type": "single",
             "card": "脑啡肽",
-            "count": 10
+            "count": 20
         },
-		"逆位脑啡\n肽*10": {
+		"逆位脑啡\n肽*20": {
             "type": "single",
             "card": "逆位脑啡肽",
-            "count": 10
+            "count": 20
         },
 		"自定义":{
 			"type": "draft",
@@ -358,7 +374,7 @@
 				"脑啡肽",
 				"逆位脑啡肽"
 			],
-			"count": 10
+			"count": 20
 		}
 	},
 	"custom_sigils":{
